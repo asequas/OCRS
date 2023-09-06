@@ -10,14 +10,14 @@ struct Course {
     char schedule[20];
     int capacity;
     int student_count;
-    struct Student** students; // Use a double pointer to dynamically allocate memory
+    struct Student** students; 
 };
 
 struct Student {
     int student_id;
     char student_name[50];
     int course_count;
-    struct Course** courses; // Use a double pointer to dynamically allocate memory
+    struct Course** courses; 
 };
 
 // Function to enroll a student in a course
