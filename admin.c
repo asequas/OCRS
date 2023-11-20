@@ -50,7 +50,6 @@ void ErrorAndRestart(char *Error[100]);
 void DeleteCourseByIndex(int CourseIndex);
 void DeleteStudentByIndex(int CourseIndex);
 void UserGuideline();
-void AboutUs();
 void GoBackOrExit();
 void ExitProject();
 void DataSeed();
@@ -177,11 +176,6 @@ int main()
             UserGuideline();
             GoBackOrExit();
             break;
-        case 9:
-            system("cls");
-            AboutUs();
-            GoBackOrExit();
-            break;
         default:
             ExitProject();
             break;
@@ -204,7 +198,6 @@ void Menu()
     printf("\t\t[6] Delete All students.\n");
     printf("\t\t[7] Clear The window.\n");
     printf("\t\t[8] User Guideline.\n");
-    printf("\t\t[9] About Us.\n");
     printf("\t\t[0] Exit the Program.\n");
     printf("\t\t=======================\n");
     printf("\t\tEnter The Choice: ");
@@ -734,20 +727,9 @@ void UserGuideline()
     printf(" -> Course code can be maximum 10 characters long.\n");
     printf(" -> Course Name can be maximum 20 characters long.\n\n");
 
-    printf(" ->> visit www.insideTheDiv.com for more project like this. <<-\n\n");
 }
 
-void AboutUs()
-{
-    printf("\n\t\t **** About US? ****\n\n");
 
-    printf(" Some important note we should remember.\n");
-    printf(" -> This is a simple student management system project.\n");
-    printf(" -> You can modify the source code.\n");
-    printf(" -> You can use this project only for personal purpose not for business.\n\n");
-
-    printf(" ->> visit www.insideTheDiv.com for more project like this. <<-\n\n");
-}
 
 void GoBackOrExit()
 {
@@ -789,15 +771,15 @@ void DataSeed()
 
     //-- store some dummy data
     //-- student 1
-    strcpy(Students[0].ID,"S-1");
-    strcpy(Students[0].Name,"Student 1");
-    strcpy(Students[0].Phone,"016111111111");
-    strcpy(Students[0].Email,"student-1@gmail.com");
+    strcpy(Students[0].ID,"22BCE1063");
+    strcpy(Students[0].Name,"Abishek Arun");
+    strcpy(Students[0].Phone,"9900090404");
+    strcpy(Students[0].Email,"abishek.arun2022@gmail.com");
     Students[0].NumberOfCourse=1;
 
-    strcpy(Courses[0].StudentID,"S-1");
+    strcpy(Courses[0].StudentID,"22BCE1063");
     strcpy(Courses[0].Code,"CSE-1");
-    strcpy(Courses[0].Name,"Course - 1");
+    strcpy(Courses[0].Name,"DSA");
 
     //-- student 2
     strcpy(Students[1].ID,"S-2");
