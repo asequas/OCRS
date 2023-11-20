@@ -17,7 +17,8 @@ typedef struct User {
 } User;
 
 // Function to register a course for a student
-void registerCourse(User *student, Course course) {
+void registerCourse(User *student, Course course, int courseId) {
+    course.courseId = courseId; // Assign the provided courseId to the course
     student->registeredCourses[student->courseCount] = course;
     student->courseCount++;
     printf("Course registered successfully!\n");
@@ -152,12 +153,21 @@ int main() {
     printf("Enter your password: ");
     scanf("%s", password);
     
+    int i;
     int loggedInUserType = login(users, 2, username, password);
-    
-    if (loggedInUserType == -1) {
-        printf("Invalid username or password!\n");
-        goto again;
+
+if (loggedInUserType == -1) {
+    printf("Invalid username or password!\n");
+    goto again;
+}
+
+int currentUserIndex;
+for (i = 0; i < 10; i++) {
+    if (strcmp(users[i].username, username) == 0) {
+        currentUserIndex = i;
+        break;
     }
+}
     
     do {
         displayMenu(loggedInUserType);
@@ -194,7 +204,9 @@ int main() {
                         goto again;
                         exit(0);
                     case 3:
-                        registerCourse(&users[i], courses[choice - 1]);
+                        printf("Enter the Course ID: ");
+                        scanf("%d", &courseId);
+                        registerCourse(&users[i], courses[choice - 1], courseId);
                         break;
                     case 4:
                         displayRegisteredCourses(users[i]);
